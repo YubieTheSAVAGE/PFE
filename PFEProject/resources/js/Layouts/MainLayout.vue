@@ -2,7 +2,7 @@
     <Link href="/hello">Show page</Link>&nbsp;
     <Link href="/">Index page</Link>
     <div>Time spent: {{ timer }}s</div>
-    <slot></slot>
+    <slot>default</slot>
 </template>
 
 <script setup>
