@@ -9,4 +9,5 @@ class Listing extends Model
 {
     use HasFactory;
     public $table = 'listings';
+    public $timestamps = false;
 }
