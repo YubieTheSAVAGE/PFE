@@ -10,4 +10,7 @@ class Listing extends Model
     use HasFactory;
     public $table = 'listings';
     public $timestamps = false;
+    protected $fillable = [
+        'beds', 'baths', 'area', 'city', 'code', 'street', 'street_nr', 'price'
+    ];
 }
