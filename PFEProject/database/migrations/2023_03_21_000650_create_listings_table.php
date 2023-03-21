@@ -8,20 +8,34 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
+     *
+     * @return void
      */
-    public function up(): void
+    public function up()
     {
         Schema::create('listings', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->unsignedTinyInteger('beds');
+            $table->unsignedTinyInteger('baths');
+            $table->unsignedTinyInteger('area');
+
+            $table->tinyText('city');
+            $table->tinyText('code');
+            $table->tinyText('street');
+            $table->tinyText('street_nr');
+
+            $table->unsignedInteger('price');
         });
     }
 
     /**
      * Reverse the migrations.
+     *
+     * @return void
      */
-    public function down(): void
+    public function down()
     {
-        Schema::dropIfExists('listings');
+        Schema::dropColumns('listings', [
+            'beds', 'baths', 'area', 'city', 'code', 'street', 'street_nr', 'price'
+        ]);
     }
 };
