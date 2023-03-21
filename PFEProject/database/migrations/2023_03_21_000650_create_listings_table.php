@@ -14,6 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::create('listings', function (Blueprint $table) {
+            $table->unsignedInteger('id');
+
             $table->unsignedTinyInteger('beds');
             $table->unsignedTinyInteger('baths');
             $table->unsignedSmallInteger('area');
